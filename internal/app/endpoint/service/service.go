@@ -1,0 +1,20 @@
+package service
+
+import "time"
+
+type Service struct {
+}
+
+func New() *Service {
+	return &Service{}
+}
+
+func (s *Service) DaysLeft() int64 {
+
+	d := time.Date(2026, time.April, 28, 0, 0, 0, 0, time.UTC)
+
+	durr := time.Until(d)
+
+	return int64(durr.Hours()) / 24
+
+}
